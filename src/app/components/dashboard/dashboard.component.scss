@@ -1,0 +1,56 @@
+#header {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 580px;
+    width: 100%;
+    position: relative;
+
+    #top-news-container {
+        position: absolute;
+        width: 1000px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        p {
+            color: #BBBBBB;
+            font-size: 15px;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: white;
+            text-transform: uppercase;
+            width: 60%;
+            line-height: 40px;
+        }
+
+        button {
+            margin-top: 10px;
+            font-weight: 600;
+            border: solid #fff 3px;
+            background-color: Transparent;
+            font-size: 15px;
+            padding: 5px 30px;
+            box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+            color: white;
+            outline: 0;
+            cursor: pointer;
+            line-height: 23px;
+            transition: all 0.2s;
+
+            &:hover {
+                background: darken(rgb(0, 0, 0, 0.8), 50%);
+            }
+
+        }
+
+    }
+}
+

@@ -1,0 +1,41 @@
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+}
+
+header {
+    background: clear;
+    padding-top: 30px;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a.logo {
+        font-weight: 600;
+        border: solid #fff 3px;
+        padding: 4px 13px;
+        margin-right: 15px;
+    }
+
+    nav {
+        float: right;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+
+            li a {
+                padding: 5px 30px;
+
+                &:hover {
+                    background: darken(black, 10%);
+                }
+            }
+        }
+    }
+}
