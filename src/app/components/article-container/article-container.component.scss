@@ -1,0 +1,52 @@
+.container {
+    width: 700px;
+    .articles {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        .body {
+            width: 200px;
+            margin: 20px 30px 15px 0px;
+            cursor: pointer;
+
+            .thumbnail {
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center; 
+                width: 200px;
+                height: 155px;
+                position: relative;
+                border: solid 5px;
+
+                .category {
+                    position: absolute;
+                    padding: 1px 15px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: white;
+                    left: 5px;
+                    top: 5px;
+                }
+            }
+
+            .date {
+                color: #666666;
+                font-size: 14px;
+                padding-top: 7px;
+            }
+
+            .title {
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+        }
+
+    }
+
+}

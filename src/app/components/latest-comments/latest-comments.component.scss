@@ -1,0 +1,55 @@
+.container {
+    margin-left: 30px;
+    padding-top: 20px;
+    .comments {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .body {
+            width: 270px;
+            margin: 20px 0px 15px 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            vertical-align: baseline;
+            overflow: hidden;
+
+            .category {
+                padding: 1px 15px;
+                font-size: 14px;
+                font-weight: 600;
+                color: white;
+                background-color: red;
+                overflow: hidden;
+                width: max-content;
+            }
+
+            .title {
+                background-color: #DADADA;
+                padding: 12px 15px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .comment {
+                background-color: #EFEFEF;
+                padding: 12px 15px;
+                font-size: 14px;
+
+                .sender {
+                    font-size: 14px;
+                    font-weight: 600;
+                    span {
+                        color: #888888;
+                    }
+                }
+
+                .message {
+                    font-weight: 400;
+                }
+
+            }
+        }
+    }
+}

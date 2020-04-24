@@ -7,6 +7,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { CategoryItemComponent } from './components/category-item/category-item.component';
+import { ArticleContainerComponent } from './components/article-container/article-container.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { TopArticlesComponent } from './components/top-articles/top-articles.component';
+import { LatestCommentsComponent } from './components/latest-comments/latest-comments.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { CategoryItemComponent } from './components/category-item/category-item.
     DashboardComponent,
     NavbarComponent,
     BannerComponent,
-    CategoryItemComponent
+    CategoryItemComponent,
+    ArticleContainerComponent,
+    SidebarComponent,
+    TopArticlesComponent,
+    LatestCommentsComponent
   ],
   imports: [
     BrowserModule,

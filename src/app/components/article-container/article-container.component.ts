@@ -3,11 +3,11 @@ import { CATEGORIES } from 'src/app/mock-data';
 import { Category } from 'src/app/models/Category';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  selector: 'app-article-container',
+  templateUrl: './article-container.component.html',
+  styleUrls: ['./article-container.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class ArticleContainerComponent implements OnInit {
 
   constructor() { }
 
