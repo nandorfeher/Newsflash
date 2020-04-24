@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Népszerű:</h1>
     <div class="articles">
-        <div *ngFor="let article of articles" class="body">
+        <div *ngFor="let article of (articles ? articles.slice(0, 3): [])" class="body">
             <div [routerLink]="['/article', article.id]" class="thumbnail" [ngStyle]="{'border-color': article.category.color}" style="background-image: url(assets/images/articles/header-image.jpg);">
                 <p class="category" [ngStyle]="{'background-color': article.category.color}">{{ article.category.name }}</p>
             </div>

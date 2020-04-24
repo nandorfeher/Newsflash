@@ -4,7 +4,7 @@
       <nav>
         <ul>
             <li *ngFor="let category of categories">
-              <a href="#{{ category.name }}" [ngStyle]="{'color': displayContent}">{{ category.name }}</a>
+              <a (click)="scrollToView(category.name)" [ngStyle]="{'color': displayContent}">{{ category.name }}</a>
             </li>
         </ul>
       </nav>

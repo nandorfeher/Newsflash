@@ -18,4 +18,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.categories = CATEGORIES;
   }
+
+  scrollToView(div: any) {
+    document.getElementById(div).scrollIntoView();
+  }
+
 }

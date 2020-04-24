@@ -2,7 +2,7 @@
     <h1>Hozzászólások:</h1>
     <div class="comments">
         <div *ngFor="let comment of comments" class="body">
-            <div [routerLink]="['/article', comment.article]">
+            <div class="comment-clickable-div" [routerLink]="['/article', comment.article]">
                 <div class="category" [ngStyle]="{'background-color': articles[comment.article].category.color}">
                     <p>{{ articles[comment.article].category.name }}</p>
                 </div>

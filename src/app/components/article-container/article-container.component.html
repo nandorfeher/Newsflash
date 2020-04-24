@@ -1,6 +1,6 @@
 <div class="container">
     <div *ngFor="let category of categories">
-        <h1 id="{{ category.name }}" class="category-title">{{ category.name }}</h1>
+        <h1 #PS id="{{ category.name }}" class="category-title">{{ category.name }}</h1>
         <div class="articles">
             <div *ngFor="let number of [0,1,2,3,4]" class="body">
                 <div [routerLink]="['/article', '0']" class="thumbnail" style="background-image: url(assets/images/articles/header-image.jpg);" [ngStyle]="{'border-color': category.color}">

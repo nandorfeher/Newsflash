@@ -14,3 +14,26 @@
     <app-article-container></app-article-container>
     <app-sidebar></app-sidebar>
 </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAfovSTpyhhb6WfUjSuPxDWLIwY-wDYSd4",
+    authDomain: "newsflash-c80e1.firebaseapp.com",
+    databaseURL: "https://newsflash-c80e1.firebaseio.com",
+    projectId: "newsflash-c80e1",
+    storageBucket: "newsflash-c80e1.appspot.com",
+    messagingSenderId: "144813477395",
+    appId: "1:144813477395:web:7ab3a500118ddd9ae7f9e6",
+    measurementId: "G-W5CDZQZ9YC"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>

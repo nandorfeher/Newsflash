@@ -17,4 +17,8 @@ export class CategoryItemComponent implements OnInit {
     this.categories = CATEGORIES;
   }
 
+  scrollToView(div: any) {
+    document.getElementById(div).scrollIntoView();
+  }
+
 }

@@ -32,11 +32,12 @@ export class ArticlePageComponent implements OnInit {
   openArticle(): void {
     this.article = ARTICLES[this.route.snapshot.params.id];
     this.comments = [];
-    COMMENTS.forEach(comment => {
+    /*COMMENTS.forEach(comment => {
       if(comment.article == this.article.id) {
         this.comments.push(comment);
       }
-    });
+    });c*/
+    this.comments = COMMENTS.filter(comment => comment.article === this.article.id);
 
   }
 

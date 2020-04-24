@@ -1,8 +1,10 @@
 <div id="container">
     <div *ngFor="let category of categories" class="category-item-container">
-        <div class="circle" [ngStyle]="{'background-color': category.color}">
-            <img src="../../../{{ category.iconUrl }}">
+        <div (click)="scrollToView(category.name)">
+            <div class="circle" [ngStyle]="{'background-color': category.color}">
+                <img src="../../../{{ category.iconUrl }}">
+            </div>
+            <p>{{ category.name }}</p>
         </div>
-        <p>{{ category.name }}</p>
     </div>
 </div>
