@@ -1,10 +1,10 @@
 <header>
     <div class="container">
-      <a routerLink="/" class="logo">NEWSFLASH</a>
+      <a routerLink="/dashboard" class="logo" [ngStyle]="{'color': displayContent}">NEWSFLASH</a>
       <nav>
         <ul>
             <li *ngFor="let category of categories">
-              <a href="#{{ category.name }}">{{ category.name }}</a>
+              <a href="#{{ category.name }}" [ngStyle]="{'color': displayContent}">{{ category.name }}</a>
             </li>
         </ul>
       </nav>

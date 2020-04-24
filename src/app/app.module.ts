@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ArticleContainerComponent } from './components/article-container/articl
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopArticlesComponent } from './components/top-articles/top-articles.component';
 import { LatestCommentsComponent } from './components/latest-comments/latest-comments.component';
+import { ArticlePageComponent } from './components/article-page/article-page.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,14 @@ import { LatestCommentsComponent } from './components/latest-comments/latest-com
     ArticleContainerComponent,
     SidebarComponent,
     TopArticlesComponent,
-    LatestCommentsComponent
+    LatestCommentsComponent,
+    ArticlePageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

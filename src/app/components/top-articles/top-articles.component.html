@@ -1,12 +1,12 @@
 <div class="container">
     <h1>Népszerű:</h1>
     <div class="articles">
-        <div *ngFor="let number of [0,1,2]" class="body">
-            <div class="thumbnail" style="background-image: url(assets/images/articles/header-image.jpg);">
-                <p class="category">Valami</p>
+        <div *ngFor="let article of articles" class="body">
+            <div [routerLink]="['/article', article.id]" class="thumbnail" [ngStyle]="{'border-color': article.category.color}" style="background-image: url(assets/images/articles/header-image.jpg);">
+                <p class="category" [ngStyle]="{'background-color': article.category.color}">{{ article.category.name }}</p>
             </div>
-            <p class="date">2020. 04. 21.</p>
-            <p class="title">Lorem ipsum dolor sit amet valor como se llama.</p>
+            <p class="date">{{ article.date }}</p>
+            <p [routerLink]="['/article', article.id]" class="title">Lorem ipsum dolor sit amet valor como se llama.</p>
         </div>
     </div>
 </div>

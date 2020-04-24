@@ -12,4 +12,8 @@ export class BannerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openWebsite(url: string){
+    console.log("opening");
+    window.open(url, "_blank");
+  }
 }

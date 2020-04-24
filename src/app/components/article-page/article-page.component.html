@@ -1,0 +1,41 @@
+<div *ngIf="article">
+  <app-navbar displayContent="black"></app-navbar>
+  <div class="container">
+    <div class="details">
+      <p class="category" [ngStyle]="{'background-color': article.category.color}">{{ article.category.name }}</p>
+      <p class="date">{{ article.date }}</p>
+    </div>
+    <h1 class="title">{{ article.name }}</h1>
+    <img src="../../../{{ article.leadImageUrl }}">
+    <p class="body">{{ article.body }}</p>
+  </div>
+  <div class="comments-container-all">
+    <p class="comments-title">Hozzászólások:</p>
+    <div class="comments-container">
+      <ng-container *ngIf="comments?.length > 0; then commentsFound; else commentsNotFound"></ng-container>
+      <ng-template #commentsFound>
+        <div *ngFor="let comment of comments">
+          <div *ngIf="(comment.article == article.id)" class="comment">
+            <p class="sender">{{ comment.sender }}<span> • {{ comment.date }}</span></p>
+            <p class="message">{{ comment.body }}</p>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #commentsNotFound>
+        <p class="no-comments">Még nem érkeztek hozzászólások.</p>
+      </ng-template>
+
+    </div>
+    <p class="comments-title">Új hozzászólás hozzáadása:</p>
+    <div class="comments-new-container">
+      <form>
+        <input type="text" name="name" placeholder="Neved" maxlength="40">
+        <textarea class="comment-message" placeholder="Hozzászólás" name="message"
+                              maxlength="1000"></textarea>
+        <div class="submit-container">
+            <button id="submit-button" type="submit">HOZZÁSZÓLÁS</button>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>

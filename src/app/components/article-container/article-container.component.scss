@@ -22,6 +22,7 @@
                 height: 155px;
                 position: relative;
                 border: solid 5px;
+                outline: 0;
 
                 .category {
                     position: absolute;
@@ -43,6 +44,7 @@
             .title {
                 font-weight: 600;
                 font-size: 14px;
+                outline: 0;
             }
 
         }

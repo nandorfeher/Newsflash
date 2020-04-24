@@ -20,9 +20,9 @@
                 font-size: 14px;
                 font-weight: 600;
                 color: white;
-                background-color: red;
                 overflow: hidden;
                 width: max-content;
+                cursor: pointer;
             }
 
             .title {
@@ -30,12 +30,14 @@
                 padding: 12px 15px;
                 font-size: 14px;
                 font-weight: 600;
+                cursor: pointer;
             }
 
             .comment {
                 background-color: #EFEFEF;
                 padding: 12px 15px;
                 font-size: 14px;
+                cursor: pointer;
 
                 .sender {
                     font-size: 14px;

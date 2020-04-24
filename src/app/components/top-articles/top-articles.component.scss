@@ -9,6 +9,7 @@
             width: 270px;
             margin: 20px 0px 15px 0px;
             cursor: pointer;
+            outline: none;
 
             .thumbnail {
                 -webkit-background-size: cover;
@@ -22,6 +23,7 @@
                 height: 140px;
                 position: relative;
                 border: solid 5px;
+                outline: 0;
 
                 .category {
                     position: absolute;
@@ -44,6 +46,7 @@
             .title {
                 font-weight: 600;
                 font-size: 14px;
+                outline: 0;
             }
 
         }

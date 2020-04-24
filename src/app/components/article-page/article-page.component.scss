@@ -1,0 +1,126 @@
+.container {
+    width: 1000px;
+    margin: 80px auto 0px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    .details {
+        display: flex;
+    }
+
+    .category {
+        padding: 1px 15px;
+        font-size: 14px;
+        font-weight: 600;
+        color: white;
+        text-transform: uppercase;
+        left: 5px;
+        top: 5px;
+    }
+
+    .date {
+        color: #BBBBBB;
+        padding-left: 15px;
+    }
+
+    .title {
+        padding: 10px 0px 30px;
+    }
+
+    img {
+        width: 1200px;
+        margin-left: -100px;
+    }
+
+    .body {
+        padding-top: 100px;
+        white-space: pre-wrap;
+        line-height: 30px;
+        font-weight: 400;
+    }
+}
+
+.comments-container-all {
+    width: 600px;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .comments-title {
+        margin: 25px 0px 10px;
+    }
+
+    .comments-container {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .no-comments {
+            text-align: center;
+            margin: 20px 0;
+            color: #bbbbbb;
+        }
+
+    }
+
+    .comment {
+        margin-bottom: 15px;
+        padding: 15px 22px;
+        background-color: #EFEFEF;
+
+        span {
+            color: #888888;
+        }
+    }
+
+    .comments-new-container {
+
+        input {
+            outline: none;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            border: 2px solid #000;
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px 10px;
+            font-size: 15px;
+        }
+
+        .comment-message {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            border: 2px solid #000;
+            display: block;
+            height: 180px;
+            width: 100%;
+            margin-bottom: 10px;
+            outline: none;
+            padding: 10px 10px;
+            resize: none;
+            font-size: 15px;
+        }
+
+        .submit-container {
+            float: right;
+
+            button {
+                background-color: #000;
+                color: #fff;
+                padding: 12px 32px 12px 32px;
+                cursor: pointer;
+                border: none;
+                font-weight: 600;
+                font-size: 14px;
+            }
+        }
+
+
+
+    }
+}

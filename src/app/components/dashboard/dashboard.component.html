@@ -1,11 +1,11 @@
 <div id="header" style="background-image: 
     linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
     url(assets/images/articles/header-image.jpg);">
-    <app-navbar></app-navbar>
+    <app-navbar displayContent="white"></app-navbar>
     <div id="top-news-container">
         <p>2020. 04. 27. • Hírek</p>
-        <h1>ELTOLJÁK A WATCH DOGS: LEGION KIADÁSÁT</h1>
-        <button>Megtekintés</button>
+        <h1 [routerLink]="['/article', '0']">ELTOLJÁK A WATCH DOGS: LEGION KIADÁSÁT</h1>
+        <button [routerLink]="['/article', '0']">Megtekintés</button>
     </div>
 </div>
 <app-category-item></app-category-item>

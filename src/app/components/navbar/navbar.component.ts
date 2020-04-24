@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CATEGORIES } from 'src/app/mock-data';
 import { Category } from 'src/app/models/Category';
 
@@ -9,6 +9,8 @@ import { Category } from 'src/app/models/Category';
 })
 export class NavbarComponent implements OnInit {
 
+  @Input('displayContent') displayContent: string;
+
   constructor() { }
 
   categories: Category[];
@@ -16,5 +18,4 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.categories = CATEGORIES;
   }
-
 }

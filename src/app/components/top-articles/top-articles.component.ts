@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ARTICLES } from 'src/app/mock-data';
+import { Article } from 'src/app/models/Article';
 
 @Component({
   selector: 'app-top-articles',
@@ -9,7 +11,9 @@ export class TopArticlesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  articles: Article[];
 
+  ngOnInit(): void {
+    this.articles = ARTICLES;
+  }
 }
