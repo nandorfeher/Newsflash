@@ -1,12 +1,12 @@
 <div class="container">
     <h1>Népszerű:</h1>
     <div class="articles">
-        <div *ngFor="let article of (articles ? articles.slice(0, 3): [])" class="body">
-            <div [routerLink]="['/article', article.id]" class="thumbnail" [ngStyle]="{'border-color': article.category.color}" style="background-image: url(assets/images/articles/header-image.jpg);">
-                <p class="category" [ngStyle]="{'background-color': article.category.color}">{{ article.category.name }}</p>
+        <div *ngFor="let article of topArticles.slice(0, 3).reverse()" class="body">
+            <div [routerLink]="['/article', article.id]" class="thumbnail" [ngStyle]="{'border-color': articleService.categories[article.categoryId].color}" style="background-image: url(assets/images/articles/header-image.jpg);">
+                <p class="category" [ngStyle]="{'background-color': articleService.categories[article.categoryId].color}">{{ articleService.categories[article.categoryId].name }}</p>
             </div>
             <p class="date">{{ article.date }}</p>
-            <p [routerLink]="['/article', article.id]" class="title">Lorem ipsum dolor sit amet valor como se llama.</p>
+            <p [routerLink]="['/article', article.id]" class="title">{{ article.name }}</p>
         </div>
     </div>
 </div>

@@ -3,11 +3,11 @@
     <div class="comments">
         <div *ngFor="let comment of comments" class="body">
             <div class="comment-clickable-div" [routerLink]="['/article', comment.article]">
-                <div class="category" [ngStyle]="{'background-color': articles[comment.article].category.color}">
-                    <p>{{ articles[comment.article].category.name }}</p>
+                <div class="category" [ngStyle]="{'background-color': 'yellow'}">
+                    <p>CATEGORY NAME</p>
                 </div>
                 <div class="title">
-                    <p>{{ articles[comment.article].name }}</p>
+                    <p></p>
                 </div>
                 <div class="comment">
                     <p class="sender">{{ comment.sender }}<span> • {{ comment.date }}</span></p>

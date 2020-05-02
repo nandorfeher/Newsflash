@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Newsflash"
+    }
+  },
+  "defaultProject": "Newsflash",
+  "cli": {
+    "analytics": "3944023a-788b-4b50-ab9c-d4dcf8627697"
+  }
 }

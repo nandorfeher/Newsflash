@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ARTICLES } from 'src/app/mock-data';
+import { ArticleService } from "../../services/article.service";
+import { TOP_ARTICLES } from "../../mock-data";
 import { Article } from 'src/app/models/Article';
 
 @Component({
@@ -9,11 +10,12 @@ import { Article } from 'src/app/models/Article';
 })
 export class TopArticlesComponent implements OnInit {
 
-  constructor() { }
+  topArticles: Article[];
 
-  articles: Article[];
+  constructor(public articleService: ArticleService) { }
 
   ngOnInit(): void {
-    this.articles = ARTICLES;
+    //this.articleService.getArticles();
+    this.topArticles = TOP_ARTICLES;
   }
 }

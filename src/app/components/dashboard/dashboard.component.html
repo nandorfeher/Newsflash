@@ -2,11 +2,13 @@
     linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
     url(assets/images/articles/header-image.jpg);">
     <app-navbar displayContent="white"></app-navbar>
-    <div id="top-news-container">
-        <p>2020. 04. 27. • Hírek</p>
-        <h1 [routerLink]="['/article', '0']">ELTOLJÁK A WATCH DOGS: LEGION KIADÁSÁT</h1>
-        <button [routerLink]="['/article', '0']">Megtekintés</button>
-    </div>
+    <ng-template [ngIf]="newestArticle[0] !== undefined">
+        <div id="top-news-container">
+            <p> {{newestArticle[0].date | date: 'yyyy. MM. dd.'}} • {{ articleService.categories[newestArticle[0].categoryId].name }}</p>
+            <h1 [routerLink]="['/article', newestArticle[0].id]"> {{ newestArticle[0].name }} </h1>
+            <button [routerLink]="['/article', newestArticle[0].id]">Megtekintés</button>    
+        </div>
+    </ng-template>
 </div>
 <app-category-item></app-category-item>
 <app-banner></app-banner>
@@ -14,26 +16,3 @@
     <app-article-container></app-article-container>
     <app-sidebar></app-sidebar>
 </div>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAfovSTpyhhb6WfUjSuPxDWLIwY-wDYSd4",
-    authDomain: "newsflash-c80e1.firebaseapp.com",
-    databaseURL: "https://newsflash-c80e1.firebaseio.com",
-    projectId: "newsflash-c80e1",
-    storageBucket: "newsflash-c80e1.appspot.com",
-    messagingSenderId: "144813477395",
-    appId: "1:144813477395:web:7ab3a500118ddd9ae7f9e6",
-    measurementId: "G-W5CDZQZ9YC"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>

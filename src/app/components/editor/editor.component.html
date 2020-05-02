@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>ÚJ CIKK ÍRÁSA</h1>
+    <div class="article-new-container">
+        <form [formGroup]="this.articleService.form">
+            <input type="text" formControlName="category" placeholder="Kategória" maxlength="1">
+            <input type="text" formControlName="title" placeholder="Cím" maxlength="100">
+            <input type="text" formControlName="imageUrl" placeholder="Kép útvonala" maxlength="100">
+            <textarea class="body" placeholder="Szöveg" formControlName="body"
+                                maxlength="10000"></textarea>
+            <div class="submit-container">
+                <button [routerLink]="['/dashboard']" id="cancel-button" type="submit">Vissza</button>
+                <button id="submit-button" (click)="onSubmit()">HOZZÁADÁS</button>
+            </div>
+      </form>
+</div>

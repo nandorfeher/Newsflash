@@ -14,6 +14,22 @@ import { TopArticlesComponent } from './components/top-articles/top-articles.com
 import { LatestCommentsComponent } from './components/latest-comments/latest-comments.component';
 import { ArticlePageComponent } from './components/article-page/article-page.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { EditorComponent } from './components/editor/editor.component';
+import { ArticleService } from './services/article.service';
+
+const config = {
+  apiKey: "AIzaSyAfovSTpyhhb6WfUjSuPxDWLIwY-wDYSd4",
+  authDomain: "newsflash-c80e1.firebaseapp.com",
+  databaseURL: "https://newsflash-c80e1.firebaseio.com",
+  projectId: "newsflash-c80e1",
+  storageBucket: "newsflash-c80e1.appspot.com",
+  messagingSenderId: "144813477395",
+  appId: "1:144813477395:web:7ab3a500118ddd9ae7f9e6",
+  measurementId: "G-W5CDZQZ9YC"
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,15 +41,19 @@ import { ArticlePageComponent } from './components/article-page/article-page.com
     SidebarComponent,
     TopArticlesComponent,
     LatestCommentsComponent,
-    ArticlePageComponent
+    ArticlePageComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

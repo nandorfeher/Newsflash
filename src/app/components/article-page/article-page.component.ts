@@ -4,9 +4,8 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { Article }         from '../../models/Article';
-import { Comment }         from '../../models/Comment';
 import { ArticleService } from 'src/app/services/article.service';
-import { ARTICLES, COMMENTS } from 'src/app/mock-data';
+import { ARTICLES } from "../../mock-data";
 
 @Component({
   selector: 'app-article-page',
@@ -15,13 +14,10 @@ import { ARTICLES, COMMENTS } from 'src/app/mock-data';
 })
 export class ArticlePageComponent implements OnInit {
   article: Article;
-  comments: Comment[];
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private articleService: ArticleService,
-    private location: Location
+    public articleService: ArticleService,
   ) {}
 
   ngOnInit(): void {
@@ -30,14 +26,36 @@ export class ArticlePageComponent implements OnInit {
   }
 
   openArticle(): void {
-    this.article = ARTICLES[this.route.snapshot.params.id];
+    ARTICLES.forEach(article_temp => {
+      if(article_temp.id == this.route.snapshot.params.id) {
+        this.article = article_temp;
+        return;
+      }
+    });
+    if(this.article == null) {
+      console.log("Nincs ilyen cikk.");
+    }
+
+    
+    
+    /*this.articleService.articles.forEach(article => {
+      if(article.id == this.route.snapshot.params.id) {
+        this.article = article;
+        return;
+      }
+    });
+    
+    
+    
+    
+
     this.comments = [];
-    /*COMMENTS.forEach(comment => {
+    COMMENTS.forEach(comment => {
       if(comment.article == this.article.id) {
         this.comments.push(comment);
       }
-    });c*/
-    this.comments = COMMENTS.filter(comment => comment.article === this.article.id);
+    });c
+    this.comments = COMMENTS.filter(comment => comment.article === 0);*/
 
   }
 
