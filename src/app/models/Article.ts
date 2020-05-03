@@ -1,5 +1,3 @@
-import { Category } from './Category';
-
 export class Article {
     id: string;
     name: string;
@@ -18,5 +16,4 @@ export class Article {
         this.date = date;
         this.views = views;
     }
-
 }

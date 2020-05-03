@@ -1,16 +1,16 @@
 <div class="container">
     <h1>Hozzászólások:</h1>
     <div class="comments">
-        <div *ngFor="let comment of comments" class="body">
+        <div *ngFor="let comment of comments.reverse().slice(0, 3)" class="body">
             <div class="comment-clickable-div" [routerLink]="['/article', comment.article]">
-                <div class="category" [ngStyle]="{'background-color': 'yellow'}">
-                    <p>CATEGORY NAME</p>
+                <div class="category" [ngStyle]="{'background-color': categories[getArticleById(comment.article).categoryId].color}">
+                    <p>{{ categories[getArticleById(comment.article).categoryId].name }}</p>
                 </div>
                 <div class="title">
-                    <p></p>
+                    <p>{{ getArticleById(comment.article).name }}</p>
                 </div>
                 <div class="comment">
-                    <p class="sender">{{ comment.sender }}<span> • {{ comment.date }}</span></p>
+                    <p class="sender">{{ comment.sender }}<span> • {{ comment.date | date: 'yyyy. MM. dd.'}}</span></p>
                     <p class="message">{{ comment.body }}</p>
                 </div>
             </div>

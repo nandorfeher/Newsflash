@@ -11,12 +11,12 @@
   </div>
   <div class="comments-container-all">
     <p class="comments-title">Hozzászólások:</p>
-    <!--div class="comments-container">
-      <ng-container *ngIf="comments?.length > 0; then commentsFound; else commentsNotFound"></ng-container>
+    <div class="comments-container">
+      <ng-container *ngIf="comments.length > 0; then commentsFound; else commentsNotFound"></ng-container>
       <ng-template #commentsFound>
         <div *ngFor="let comment of comments">
-          <div *ngIf="(comment.article == 0)" class="comment">
-            <p class="sender">{{ comment.sender }}<span> • {{ comment.date }}</span></p>
+          <div *ngIf="(comment.article == article.id)" class="comment">
+            <p class="sender">{{ comment.sender }}<span> • {{ comment.date | date: 'yyyy. MM. dd.'}}</span></p>
             <p class="message">{{ comment.body }}</p>
           </div>
         </div>
@@ -25,15 +25,15 @@
         <p class="no-comments">Még nem érkeztek hozzászólások.</p>
       </ng-template>
 
-    </div-->
+    </div>
     <p class="comments-title">Új hozzászólás hozzáadása:</p>
     <div class="comments-new-container">
-      <form>
-        <input type="text" name="name" placeholder="Neved" maxlength="40">
-        <textarea class="comment-message" placeholder="Hozzászólás" name="message"
+      <form [formGroup]="this.commentService.form">
+        <input type="text" name="name" formControlName="sender" placeholder="Neved" maxlength="40">
+        <textarea class="comment-message" formControlName="body" placeholder="Hozzászólás" name="message"
                               maxlength="1000"></textarea>
         <div class="submit-container">
-            <button id="submit-button" type="submit">HOZZÁSZÓLÁS</button>
+            <button id="submit-button" type="submit" (click)="onSubmit()">HOZZÁSZÓLÁS</button>
         </div>
     </form>
     </div>

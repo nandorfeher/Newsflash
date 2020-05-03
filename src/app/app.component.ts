@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ArticleService } from './services/article.service';
+import { CommentService } from './services/comment.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,12 @@ import { ArticleService } from './services/article.service';
 export class AppComponent {
   title = 'Newsflash';
 
-  constructor(public articleService: ArticleService) { }
+  constructor(public articleService: ArticleService,
+    public commentService: CommentService) { }
 
   ngOnInit() {
     this.articleService.getArticles();
+    this.commentService.getComments();
   }
 
 }

@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { Router } from '@angular/router';
 
 import { Article }         from '../../models/Article';
 import { ArticleService } from 'src/app/services/article.service';
-import { ARTICLES } from "../../mock-data";
+import { CommentService } from 'src/app/services/comment.service';
+import { ARTICLES, COMMENTS } from "../../mock-data";
+import { Comment } from 'src/app/models/Comment';
 
 @Component({
   selector: 'app-article-page',
@@ -14,10 +14,12 @@ import { ARTICLES } from "../../mock-data";
 })
 export class ArticlePageComponent implements OnInit {
   article: Article;
+  comments: Comment[];
 
   constructor(
     private route: ActivatedRoute,
     public articleService: ArticleService,
+    public commentService: CommentService
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +31,18 @@ export class ArticlePageComponent implements OnInit {
     ARTICLES.forEach(article_temp => {
       if(article_temp.id == this.route.snapshot.params.id) {
         this.article = article_temp;
+        this.articleService.addViewToArticle(this.route.snapshot.params.id, this.article.views += 1);
+
+        this.comments = COMMENTS.filter(comment => comment.article == this.route.snapshot.params.id).sort(function(a, b) {
+          var keyA = a.date,
+            keyB = b.date;
+          // Compare the 2 dates
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return 1;
+          return 0;
+        });
+
+
         return;
       }
     });
@@ -36,7 +50,9 @@ export class ArticlePageComponent implements OnInit {
       console.log("Nincs ilyen cikk.");
     }
 
-    
+
+
+
     
     /*this.articleService.articles.forEach(article => {
       if(article.id == this.route.snapshot.params.id) {
@@ -57,6 +73,21 @@ export class ArticlePageComponent implements OnInit {
     });c
     this.comments = COMMENTS.filter(comment => comment.article === 0);*/
 
+  }
+
+  onSubmit() {
+    let comment = new Comment(
+      null,
+      this.commentService.form.get('sender').value,
+      Date.now(),
+      this.commentService.form.get('body').value,
+      this.article.id);
+      this.comments.push(comment);
+      this.commentService.form.reset();
+      this.commentService.addComment(comment)
+       .then(res => {
+           
+       });
   }
 
 }

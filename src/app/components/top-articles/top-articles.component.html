@@ -5,7 +5,7 @@
             <div [routerLink]="['/article', article.id]" class="thumbnail" [ngStyle]="{'border-color': articleService.categories[article.categoryId].color}" style="background-image: url(assets/images/articles/header-image.jpg);">
                 <p class="category" [ngStyle]="{'background-color': articleService.categories[article.categoryId].color}">{{ articleService.categories[article.categoryId].name }}</p>
             </div>
-            <p class="date">{{ article.date }}</p>
+            <p class="date">{{ article.date | date: 'yyyy. MM. dd.'}}</p>
             <p [routerLink]="['/article', article.id]" class="title">{{ article.name }}</p>
         </div>
     </div>

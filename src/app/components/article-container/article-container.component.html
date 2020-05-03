@@ -1,13 +1,17 @@
 <div class="container">
     <div *ngFor="let category of categories">
-        <h1 #PS id="{{ category.name }}" class="category-title">{{ category.name }}</h1>
+        <h1 id="{{ category.name }}" class="category-title">{{ category.name }}</h1>
         <div class="articles">
-            <div *ngFor="let number of [0,1,2,3,4]" class="body">
-                <div [routerLink]="['/article', '0']" class="thumbnail" style="background-image: url(assets/images/articles/header-image.jpg);" [ngStyle]="{'border-color': category.color}">
-                    <p class="category" [ngStyle]="{'background-color': category.color}">{{ category.name }}</p>
-                </div>
-                <p [routerLink]="['/article', '0']" class="date">2020. 04. 21.</p>
-                <p [routerLink]="['/article', '0']" class="title">Lorem ipsum dolor sit amet valor como se llama.</p>
+            <div *ngFor="let article of articles">
+                <ng-template [ngIf]="article.categoryId == category.id">
+                    <div class="body">
+                        <div [routerLink]="['/article', article.id]" class="thumbnail" style="background-image: url(assets/images/articles/header-image.jpg);" [ngStyle]="{'border-color': category.color}">
+                            <p class="category" [ngStyle]="{'background-color': category.color}">{{ category.name }}</p>
+                        </div>
+                        <p [routerLink]="['/article', article.id]" class="date">{{ article.date | date: 'yyyy. MM. dd.' }}</p>
+                        <p [routerLink]="['/article', article.id]" class="title">{{ article.name }}</p>
+                    </div>
+                </ng-template>
             </div>
         </div>
     </div>

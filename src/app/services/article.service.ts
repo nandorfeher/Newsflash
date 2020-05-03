@@ -4,7 +4,6 @@ import { FormControl, FormGroup } from "@angular/forms";
 import { CATEGORIES } from '../mock-data';
 import { Category } from '../models/Category';
 import { Article } from '../models/Article';
-import { database } from 'firebase';
 import { ARTICLES } from "../mock-data";
 import { NEWEST_ARTICLE } from "../mock-data";
 import { TOP_ARTICLES } from "../mock-data";
@@ -26,7 +25,7 @@ export class ArticleService {
   categories: Category[];
 
   ngOnInit() {
-    console.log("starting");
+    console.log("Fetching articles...");
     //this.getArticles();
   }
 
@@ -36,6 +35,13 @@ export class ArticleService {
             .collection("articles")
             .add({...data})
             .then(res => {}, err => reject(err));
+    });
+  }
+
+
+  addViewToArticle(id: string, newViews) {
+    this.firestore.collection("articles").doc(id).update({
+      views: newViews
     });
   }
 

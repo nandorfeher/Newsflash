@@ -11,9 +11,9 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const COMMENTS: Comment[] = [
-  { id: 0, sender: 'Balázs', date: '2020. 04. 29.', body: 'Nisi id elementum quisque neque eu. S amet in risus sem venenatis. Egestas felis malesuada enim sit en.', article: 0},
+  /*{ id: 0, sender: 'Balázs', date: '2020. 04. 29.', body: 'Nisi id elementum quisque neque eu. S amet in risus sem venenatis. Egestas felis malesuada enim sit en.', article: 0},
   { id: 1, sender: 'Enikő', date: '2020. 04. 20.', body: 'Nirisus sem venenatis. Egestas felis malesuada enim sit en.', article: 1},
-  { id: 2, sender: 'Sanyi', date: '2020. 04. 19.', body: 'Nirisus sem venenatis. Egestas felis malesuada enim sit en.', article: 0},
+  { id: 2, sender: 'Sanyi', date: '2020. 04. 19.', body: 'Nirisus sem venenatis. Egestas felis malesuada enim sit en.', article: 0},*/
 ];
 
 export const ARTICLES: Article[] = [
