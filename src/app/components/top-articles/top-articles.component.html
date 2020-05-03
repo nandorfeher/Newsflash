@@ -2,7 +2,7 @@
     <h1>Népszerű:</h1>
     <div class="articles">
         <div *ngFor="let article of topArticles.slice(0, 3).reverse()" class="body">
-            <div [routerLink]="['/article', article.id]" class="thumbnail" [ngStyle]="{'border-color': articleService.categories[article.categoryId].color}" style="background-image: url(assets/images/articles/header-image.jpg);">
+            <div [routerLink]="['/article', article.id]" class="thumbnail" [ngStyle]="{ 'background-image': 'url(assets/images/articles/'+ article.leadImageUrl + ')', 'border-color': articleService.categories[article.categoryId].color}">
                 <p class="category" [ngStyle]="{'background-color': articleService.categories[article.categoryId].color}">{{ articleService.categories[article.categoryId].name }}</p>
             </div>
             <p class="date">{{ article.date | date: 'yyyy. MM. dd.'}}</p>

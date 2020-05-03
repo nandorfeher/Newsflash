@@ -2,10 +2,10 @@
     <div *ngFor="let category of categories">
         <h1 id="{{ category.name }}" class="category-title">{{ category.name }}</h1>
         <div class="articles">
-            <div *ngFor="let article of articles">
+            <div *ngFor="let article of articles.reverse()">
                 <ng-template [ngIf]="article.categoryId == category.id">
                     <div class="body">
-                        <div [routerLink]="['/article', article.id]" class="thumbnail" style="background-image: url(assets/images/articles/header-image.jpg);" [ngStyle]="{'border-color': category.color}">
+                        <div [routerLink]="['/article', article.id]" class="thumbnail" [ngStyle]="{'border-color': category.color, 'background-image': 'url(assets/images/articles/' + article.leadImageUrl}">
                             <p class="category" [ngStyle]="{'background-color': category.color}">{{ category.name }}</p>
                         </div>
                         <p [routerLink]="['/article', article.id]" class="date">{{ article.date | date: 'yyyy. MM. dd.' }}</p>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ArticleService } from "../../services/article.service";
-import { NEWEST_ARTICLE } from "../../mock-data";
+import { NEWEST_ARTICLE, ARTICLES } from "../../mock-data";
 import { Article } from 'src/app/models/Article';
 
 @Component({
@@ -16,11 +16,13 @@ export class DashboardComponent implements OnInit {
     public articleService: ArticleService) { }
   
   newestArticle: Article[];
+  localLeadImage: string;
 
   ngOnInit(): void {
     //this.articleService.getArticles();
     this.newestArticle = NEWEST_ARTICLE;
-    console.log(this.newestArticle);
+
+    //document.querySelector("header").style.cssText = "background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(assets/images/articles/" + this.newestArticle[0].leadImageUrl;
     /*this.articleService.firestore.collection("articles").get().toPromise().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
           // doc.data() is never undefined for query doc snapshots

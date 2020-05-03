@@ -6,7 +6,7 @@
       <p class="date">{{ article.date | date: 'yyyy. MM. dd.'}}</p>
     </div>
     <h1 class="title">{{ article.name }}</h1>
-    <img src="assets/images/articles/header-image.jpg">
+    <img [src]="'assets/images/articles/' + article.leadImageUrl">
     <p class="body">{{ article.body }}</p>
   </div>
   <div class="comments-container-all">

@@ -1,15 +1,17 @@
-<div id="header" style="background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
-    url(assets/images/articles/header-image.jpg);">
-    <app-navbar displayContent="white"></app-navbar>
-    <ng-template [ngIf]="newestArticle[0] !== undefined">
-        <div id="top-news-container">
-            <p> {{newestArticle[0].date | date: 'yyyy. MM. dd.'}} • {{ articleService.categories[newestArticle[0].categoryId].name }}</p>
-            <h1 [routerLink]="['/article', newestArticle[0].id]"> {{ newestArticle[0].name }} </h1>
-            <button [routerLink]="['/article', newestArticle[0].id]">Megtekintés</button>    
-        </div>
-    </ng-template>
-</div>
+<ng-template [ngIf]="newestArticle[0] !== undefined">
+    <div id="header" 
+    [ngStyle]="{ 'background-image': 'linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(assets/images/articles/'+ newestArticle[0].leadImageUrl + ')'}"
+    >
+        <app-navbar displayContent="white"></app-navbar>
+        
+            <div id="top-news-container" ng-init="function()">
+                <p> {{newestArticle[0].date | date: 'yyyy. MM. dd.'}} • {{ articleService.categories[newestArticle[0].categoryId].name }}</p>
+
+                <h1 [routerLink]="['/article', newestArticle[0].id]"> {{ newestArticle[0].name }} </h1>
+                <button [routerLink]="['/article', newestArticle[0].id]">Megtekintés</button>    
+            </div>
+    </div>
+</ng-template>
 <app-category-item></app-category-item>
 <app-banner></app-banner>
 <div id="content-container">
