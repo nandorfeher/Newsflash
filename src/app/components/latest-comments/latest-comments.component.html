@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Hozzászólások:</h1>
     <div class="comments">
-        <div *ngFor="let comment of comments.reverse().slice(0, 3)" class="body">
+        <div *ngFor="let comment of comments.slice(0, 3).reverse()" class="body">
             <div class="comment-clickable-div" [routerLink]="['/article', comment.article]">
                 <div class="category" [ngStyle]="{'background-color': categories[getArticleById(comment.article).categoryId].color}">
                     <p>{{ categories[getArticleById(comment.article).categoryId].name }}</p>

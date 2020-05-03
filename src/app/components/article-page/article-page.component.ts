@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Article }         from '../../models/Article';
 import { ArticleService } from 'src/app/services/article.service';
@@ -19,7 +20,8 @@ export class ArticlePageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public articleService: ArticleService,
-    public commentService: CommentService
+    public commentService: CommentService,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
@@ -47,7 +49,7 @@ export class ArticlePageComponent implements OnInit {
       }
     });
     if(this.article == null) {
-      console.log("Nincs ilyen cikk.");
+      this.router.navigate(['/dashboard']);
     }
 
 

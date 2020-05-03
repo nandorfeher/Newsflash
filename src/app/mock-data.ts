@@ -25,3 +25,7 @@ export const NEWEST_ARTICLE: Article[] = [
 export const TOP_ARTICLES: Article[] = [
 
 ];
+
+export const LATEST_COMMENTS: Comment[] = [
+
+];

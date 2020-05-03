@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Comment }         from '../../models/Comment';
 import { Article }         from '../../models/Article';
-import { ARTICLES, COMMENTS, CATEGORIES } from 'src/app/mock-data';
+import { ARTICLES, COMMENTS, CATEGORIES, LATEST_COMMENTS, NEWEST_ARTICLE } from 'src/app/mock-data';
 import { Category } from 'src/app/models/Category';
 
 @Component({
@@ -20,14 +20,7 @@ export class LatestCommentsComponent implements OnInit {
   ngOnInit(): void {
     this.categories = CATEGORIES;
     this.articles = ARTICLES;
-    this.comments = COMMENTS.sort(function(a, b) {
-      var keyA = a.date,
-        keyB = b.date;
-      // Compare the 2 dates
-      if (keyA < keyB) return 1;
-      if (keyA > keyB) return -1;
-      return 0;
-    });
+    this.comments = LATEST_COMMENTS;
   }
 
   getArticleById(id: string) {
